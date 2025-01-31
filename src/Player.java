@@ -1,22 +1,25 @@
-import java.util.Scanner;
+public abstract class Player implements Person {
+    private String name;
+    private int height; // in centimeters
+    private int age; // in years
 
-public class Player {
-    //PROPERTIES
-    
-    String name;
-    int ageinmonths;
-    String heightmm;
+    public Player(String name, int height, int age) {
+        this.name = name;
+        this.height = height;
+        this.age = age;
+    }
 
-    //CONSTRUCTORS
-    String gettName = Person.getName();
+    public String getName() {
+        return name;
+    }
 
-    public String gettName(){
-        Scanner Height = new Scanner(System.in);  // Create a Scanner object
-        System.out.println("Enter height in mm");
-        String height = Height.nextLine();  // Read user input
-        System.out.println("Height is: " + height);  // Output user input
+    @Override
+    public int getHeight() {
         return height;
     }
 
-    //METHODS
+    @Override
+    public int getAge() {
+        return age;
+    }
 }
