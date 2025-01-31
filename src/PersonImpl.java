@@ -14,8 +14,9 @@ public class PersonImpl implements Person {
         this.name = name;
     }
 
+
     public String getName() {
-        return name;
+        return name; // Return the name of the person
     }
 
     @Override
@@ -32,5 +33,19 @@ public class PersonImpl implements Person {
     public Results getResults() {
         // Implement logic to return results if needed
         return null; // Placeholder
+    }
+
+    // Climb method to simulate climbing stairs in a given direction
+    public void climb(String dir) {
+        System.out.println(name + " is climbing " + dir + " stairs:");
+
+        // Simulate climbing stairs
+        for (int i = 1; i <= 5; i++) { // Outer loop for the number of stairs
+            System.out.print("Step " + i + ": ");
+            for (int j = 1; j <= 3; j++) { // Inner loop for the climbing action
+                System.out.print(dir + " ");
+            }
+            System.out.println(); // Move to the next line after each step
+        }
     }
 }

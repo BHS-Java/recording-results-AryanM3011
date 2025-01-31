@@ -21,20 +21,16 @@ public class Main implements Spec {
         // Create a Person object using the provided information
         Person person = new PersonImpl(name, height, age);
         game.addPlayer(person);
-        
 
         // Display the created person's information
         System.out.println("Person created: ");
-        System.out.println("Name: " + Person.getName());
+        System.out.println("Name: " + person.getName());
         System.out.println("Height: " + person.getHeight() + " cm");
         System.out.println("Age: " + person.getAge() + " years");
 
-        // Get results from the game
-        ResultsImpl results = getResults(game);
-        System.out.println("Players in the game:");
-        for (Person p : results.getPlayers()) {
-            System.out.println("Name: " + Person.getName() + ", Height: " + p.getHeight() + ", Age: " + p.getAge());
-        }
+        // Ask the user for the direction to climb
+        String direction = askString("Which direction do you want to climb (up/down)? ");
+        person.climb(direction); // Call the climb method
     }
 
     @Override
@@ -49,8 +45,8 @@ public class Main implements Spec {
         return USER.nextInt();
     }
 
-
-    public ResultsImpl getResults(Game guessingOrBetter) {
+    @Override
+    public Results getResults(Game guessingOrBetter) {
         return guessingOrBetter.getResults();
     }
 

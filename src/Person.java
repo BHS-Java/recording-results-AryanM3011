@@ -1,10 +1,10 @@
 public interface Person {
-    public void     setName(String name);
-    public static String   getName() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getName'");
-    }
-    public int      getHeight();
-    public int      getAge();
-    public Results  getResults(); 
+    void setName(String name);
+    String getName(); // This should be an instance method, not static
+    int getHeight();
+    int getAge();
+    Results getResults(); 
+    void climb(String location); // Add the climb method
+
+
 }
