@@ -1,7 +1,8 @@
 public interface Person {
-    public void     setName(String name);
-    public String   getName();
-    public int      getHeight();
-    public int      getAge();
-    public Results  getResults(); 
+    void setName(String name);
+    String getName(); 
+    int getHeight();
+    int getAge();
+    Results getResults(); 
+    void climb(String direction, int steps); 
 }
